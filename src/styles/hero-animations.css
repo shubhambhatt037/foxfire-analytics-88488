@@ -1,0 +1,184 @@
+@media (prefers-reduced-motion: no-preference) {
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      hsl(var(--background) / 0.85) 0%,
+      hsl(var(--background) / 0.6) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 1;
+    will-change: opacity;
+  }
+
+  .hero-heading {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    will-change: transform;
+  }
+
+  .hero-sub {
+    line-height: 1.5;
+    color: hsl(var(--muted-foreground) / 0.9);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary))) !important;
+    box-shadow: 0 4px 20px hsl(var(--primary) / 0.3),
+                0 0 40px hsl(var(--primary) / 0.15) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    will-change: transform, box-shadow;
+    border: none !important;
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 6px 30px hsl(var(--primary) / 0.4),
+                0 0 60px hsl(var(--primary) / 0.25) !important;
+  }
+
+  .btn-secondary {
+    background: transparent !important;
+    border: 1px solid hsl(var(--border)) !important;
+    color: hsl(var(--foreground)) !important;
+    transition: background 0.2s ease, transform 0.2s ease !important;
+    will-change: transform, background;
+  }
+
+  .btn-secondary:hover {
+    background: hsl(var(--background) / 0.8) !important;
+    transform: scale(1.02) !important;
+  }
+
+  .partners {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+  .partners.in-view {
+    opacity: 1;
+  }
+
+  .partner {
+    opacity: 0.4;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    will-change: opacity, transform;
+  }
+
+  .partner.in-view {
+    opacity: 1;
+  }
+
+  .partner:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
+  .card-hover {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .card-hover:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-1deg) translateZ(10px);
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
+  }
+
+  .fade-in.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .glitch-text {
+    position: relative;
+    will-change: transform;
+  }
+
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  .glitch-text.glitch-active::before {
+    animation: glitch-1 0.3s ease;
+    color: hsl(var(--primary));
+    clip-path: inset(0 0 50% 0);
+  }
+
+  .glitch-text.glitch-active::after {
+    animation: glitch-2 0.3s ease;
+    color: hsl(var(--secondary));
+    clip-path: inset(50% 0 0 0);
+  }
+
+  @keyframes glitch-1 {
+    0%, 100% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+  }
+
+  @keyframes glitch-2 {
+    0%, 100% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(2px, 2px);
+    }
+    40% {
+      transform: translate(2px, -2px);
+    }
+    60% {
+      transform: translate(-2px, 2px);
+    }
+    80% {
+      transform: translate(-2px, -2px);
+    }
+  }
+
+  .parallax-element {
+    will-change: transform;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-overlay,
+  .hero-heading,
+  .btn-primary,
+  .btn-secondary,
+  .partner,
+  .card-hover,
+  .fade-in,
+  .glitch-text,
+  .parallax-element {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+

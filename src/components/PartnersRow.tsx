@@ -7,17 +7,18 @@ export const PartnersRow = () => {
   ];
 
   return (
-    <section className="relative z-10 border-t border-border/50 bg-background/80 backdrop-blur-sm">
+    <section className="relative z-10 border-t border-border/50 bg-background/80 backdrop-blur-sm partners">
       <div className="container mx-auto px-8 lg:px-24 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <p className="text-sm text-muted-foreground">
             Powering traders and funds in India
           </p>
           <div className="flex items-center gap-8 lg:gap-12 flex-wrap justify-center">
-            {partners.map((partner) => (
+            {partners.map((partner, index) => (
               <div
                 key={partner.name}
-                className="opacity-40 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+                className="partner grayscale hover:grayscale-0"
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <img
                   src={partner.logo}
