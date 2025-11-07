@@ -1,9 +1,9 @@
 export const PartnersRow = () => {
   const partners = [
-    { name: "Stripe", logo: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=120&h=40&fit=crop&q=80" },
-    { name: "NVIDIA", logo: "https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?w=120&h=40&fit=crop&q=80" },
-    { name: "Snowflake", logo: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=120&h=40&fit=crop&q=80" },
-    { name: "Databricks", logo: "https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?w=120&h=40&fit=crop&q=80" },
+    { name: "Zerodha", logo: "/assets/logos/zerodha.svg" },
+    { name: "Groww", logo: "/assets/logos/groww.svg" },
+    { name: "Angel One", logo: "/assets/logos/angel-one.svg" },
+    { name: "Upstox", logo: "/assets/logos/upstox.svg" },
   ];
 
   return (

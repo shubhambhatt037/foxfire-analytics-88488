@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-background.png";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+    <section className="hero-section">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -18,14 +18,15 @@ export const Hero = () => {
       {/* Left Overlay Fade */}
       <div className="hero-overlay" />
 
-      {/* Content */}
-      <div className="container relative z-10 mx-auto px-8 lg:px-24 py-32">
-        <div className="max-w-2xl fade-in">
+      {/* Hero Content Container */}
+      <div className="hero-content-wrapper">
+        {/* Main Content */}
+        <div className="hero-main-content fade-in">
           <h1 
             className="text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 hero-heading glitch-text"
             data-text="Smarter Investing Starts Here"
           >
-            Smarter Investing Starts Here
+            Smarter Investing<br />Starts Here
           </h1>
 
           <p className="text-lg md:text-xl hero-sub mb-8 max-w-xl">
@@ -42,6 +43,47 @@ export const Hero = () => {
             <Button size="lg" variant="outline" className="btn-secondary">
               Watch Demo
             </Button>
+          </div>
+        </div>
+
+        {/* Partner Logo Strip */}
+        <div className="hero-partners-strip" role="region" aria-label="Trusted broker partners">
+          <p className="hero-partners-label">
+            Powering traders at <br /> leading Indian brokers
+          </p>
+          <div className="hero-partners-logos">
+            <a href="https://zerodha.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Zerodha" className="hero-partner-link">
+              <img
+                src="/logos/zerodha.svg"
+                alt="Zerodha"
+                className="hero-partner-logo hero-partner-logo-zerodha"
+                loading="lazy"
+              />
+            </a>
+            <a href="https://groww.in" target="_blank" rel="noopener noreferrer" aria-label="Visit Groww" className="hero-partner-link">
+              <img
+                src="/logos/groww.svg"
+                alt="Groww"
+                className="hero-partner-logo hero-partner-logo-groww"
+                loading="lazy"
+              />
+            </a>
+            <a href="https://angelone.in" target="_blank" rel="noopener noreferrer" aria-label="Visit Angel One" className="hero-partner-link">
+              <img
+                src="/logos/angel-one.svg"
+                alt="Angel One"
+                className="hero-partner-logo hero-partner-logo-angel"
+                loading="lazy"
+              />
+            </a>
+            <a href="https://upstox.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Upstox" className="hero-partner-link">
+              <img
+                src="/logos/upstox.svg"
+                alt="Upstox"
+                className="hero-partner-logo hero-partner-logo-upstox"
+                loading="lazy"
+              />
+            </a>
           </div>
         </div>
       </div>
